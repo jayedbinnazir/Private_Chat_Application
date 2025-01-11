@@ -1,5 +1,6 @@
 // external imports
 const express = require("express");
+const fs = require("fs");
 const http = require("http");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
@@ -60,6 +61,9 @@ app.use(notFoundHandler);
 
 // common error handler
 app.use(errorHandler);
+
+const avatarsDir = path.join(__dirname, "public", "uploads", "avatars");
+fs.mkdirSync(avatarsDir, { recursive: true });
 
 server.listen(process.env.PORT, () => {
   console.log(`app listening to port ${process.env.PORT}`);
