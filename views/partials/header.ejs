@@ -24,9 +24,9 @@
       <div class="menu-item"><a href="/users">Users</a></div>
       <div class="menu-item">
         <% if (loggedInUser && loggedInUser.avatar) { %>
-          <img src="/uploads/avatars/<%= loggedInUser.avatar %>" alt="<%= loggedInUser.name %>" />
+          <img src="./uploads/avatars/<%= loggedInUser.avatar %>" alt="<%= loggedInUser.name %>" />
           <% } else { %>
-            <img src="/images/nophoto.png" alt="<%= loggedInUser.name %>" />
+            <img src="./images/nophoto.png" alt="<%= loggedInUser.name %>" />
             <% } %>
               <a href="#" onclick="logout()">Logout</a>
       </div>
